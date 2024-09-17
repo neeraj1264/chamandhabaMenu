@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Burger from './components/Pages/Burger/Burger';
+import Paneer from './components/Pages/Paneer/Paneer';
 import Pasta from './components/Pages/Pasta/Pasta';
 import Category from './components/categories/Category';
 import Sandwich from './components/Pages/Sandwich';
@@ -34,7 +34,7 @@ const MenuLayout = () => {
             {/* {Loading ? <HashLoader color="#d32e2e" style={{position: 'absolute', top: '50%', left: '50%'}}/> : (
 <> */}
     <Category/>
-   <Burger/>
+   <Paneer/>
    <Sandwich/>
    <Pizza/>
    <Pasta/>

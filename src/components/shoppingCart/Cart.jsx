@@ -98,7 +98,7 @@ const Cart = ({ id }) => {
         : 0;
 
       return total + basePrice + addonsPrice + cheesesPrice;
-    }, 20); // Assuming 20 is the initial total (Service Charge)
+    }, 0); // Assuming 20 is the initial total (Service Charge)
   };
 
   useEffect(() => {
@@ -346,14 +346,7 @@ Service Charge = ₹ 20.00
                         <td colSpan="5" style={{border: "none"}}></td>
                         </tr>
                     )}
-                {cartItems.length > 0 && (
-                  <tr>
-                    <td colSpan="4" style={{ textAlign: "left" , fontWeight: 500 }}>
-                      Delivery Charge <span style={{textAlign: "center", paddingLeft: '2rem' , fontWeight: 700}}>[Upto 2Km]</span>
-                    </td>
-                    <td style={{fontWeight: 700 , textAlign: "left", paddingRight: '1.5rem'}}>₹20</td>
-                  </tr>
-                )}
+              
 
                   {/* Empty Row */}
                   {cartItems.length > 0 && (
