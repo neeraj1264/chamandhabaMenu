@@ -8,8 +8,8 @@ footer {
   width: 100%;
   /* left: 38%; */
   align-items: center;
-  background: var(--bg);
-  border-radius: 1rem 1rem 0 0 ;
+  background: var(--dark-green);
+  border-radius: 1rem 1rem 0 0;
 }
 .badge {
   position: absolute;
@@ -21,6 +21,7 @@ footer {
   align-items: center;
   height: 100%;
   margin: 0 0.5rem;
+  background: var(--dark-green);
 }
 .footer-content .i {
   display: flex;
@@ -32,17 +33,19 @@ footer {
   text-decoration: none;
   color: white;
 }
-.cart{
+.cart {
   font-size: 1rem;
   font-weight: 700;
   text-align: center;
+  background: var(--dark-green);
 }
-.worth{
+.worth {
   font-weight: 400;
+  background: var(--dark-green);
 }
-.cartno{
-  font-size: .6rem !important;
-  margin-left: -.5rem;
+.cartno {
+  font-size: 0.6rem !important;
+  margin-left: -0.5rem;
   background-color: white !important;
   color: white;
 }
@@ -52,35 +55,35 @@ footer {
 }
 .nav-link .icon {
   font-size: 1.3rem;
-  color: var(--bg);
+  color: var(--dark-green);
   background: white;
   border-radius: 3rem;
-  margin-bottom: .3rem;
+  margin-bottom: 0.3rem;
 }
-.nav-link{
-  font-size: .8rem !important;
+.nav-link {
+  font-size: 0.8rem !important;
 }
-.nav-link.active  {
+.nav-link.active {
   font-weight: 800;
   /* font-size: .8rem; */
   background: white;
   color: var(--bg) !important;
-  padding: .2rem .5rem;
-  border-radius: .5rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
 }
-.nav-link.pad.active{
+.nav-link.pad.active {
   font-weight: 800;
-    font-size: 1rem;
-    background: white;
-    color: var(--bg) !important;
-    padding: .2rem 1.3rem;
-    border-radius: .5rem;
+  font-size: 1rem;
+  background: white;
+  color: var(--bg) !important;
+  padding: 0.2rem 1.3rem;
+  border-radius: 0.5rem;
 }
-.G-icon{
-font-size: 1.2rem;
+.G-icon {
+  font-size: 1.2rem;
 }
-.G-name{
-  font-size: .8rem;
+.G-name {
+  font-size: 0.8rem;
 }
 @keyframes bump {
   0% {

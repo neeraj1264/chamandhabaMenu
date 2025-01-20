@@ -21,7 +21,7 @@ const Chinese = () => {
   
   return (
     <>
-      <h2 id='chinese' style={{textAlign: 'center' , marginTop: '8rem'}}>Delicious Chinese</h2>
+      <h2 id='chinese' className='category-header'>Delicious Chinese</h2>
       {renderCards(ChineseData)}
     </>
   );

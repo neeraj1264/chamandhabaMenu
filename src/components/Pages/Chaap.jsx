@@ -15,7 +15,7 @@ const Chaap = () => {
   
   return (
     <>
-      <h2 id='chaap' style={{textAlign: 'center' , marginTop: '8rem'}}>Delicious Chaap</h2>
+      <h2 id='chaap' className='category-header'>Delicious Chaap</h2>
       {renderCards(ChaapData)}
     </>
   );

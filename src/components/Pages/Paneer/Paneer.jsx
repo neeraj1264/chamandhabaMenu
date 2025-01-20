@@ -13,7 +13,7 @@ const Paneer = () => {
   
   return (
     <>
-      <h2 id='paneer' style={{textAlign: 'center' , marginTop: '8rem'}}>Best in Paneer</h2>
+      <h2 id='paneer' className='category-header'>Best in Paneer</h2>
       {renderCards(PaneerData)}
     </>
   );

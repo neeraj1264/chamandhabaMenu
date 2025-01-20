@@ -3,9 +3,16 @@ a {
 }
 :root {
   --bg: #d32e2e;
+  --dark-green: #045204;
+  --light-green: #0d270d
+}
+*{
+  background-color: black;
 }
 .main-content {
   margin-bottom: 4rem;
+  background: black;
+  color: white;
 }
 .product-card {
   display: flex;
@@ -40,7 +47,7 @@ a {
   font-size: 0.8rem;
 }
 .add-btn {
-  box-shadow: 1px 0px 3px 3px var(--bg);
+  box-shadow: 1px 0px 3px 3px var(--dark-green);
   background: whitesmoke;
   width: fit-content;
   align-items: center;
@@ -53,10 +60,11 @@ a {
   color: var(--bg);
 }
 .add-btn button {
-  color: var(--bg);
+  color: var(--dark-green);
   font-weight: 800;
   padding: 0.4rem 1rem;
   font-size: 1.2rem;
+  background: var(--light-green);
 }
 .added {
   border: none;
@@ -111,4 +119,53 @@ a {
   width: 3.3rem;
   box-shadow: -2px 1px 2px 2px black;
   border-radius: 10rem;
+}
+
+.menu-btn-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  transition: bottom 0.3s ease; /* Smooth transition when shifting */
+}
+
+.menu-btn {
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  background: #121212;
+  padding: .5rem;
+  border-radius: .5rem;
+  margin: 0;
+  border: 1px solid #ddd;
+}
+
+.menu-search {
+  flex-grow: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #121212;
+  border-radius: .5rem;
+}
+
+.menu-search:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.25);
+}
+
+
+.category-header{
+text-align: center;
+margin-top: 1rem;
 }

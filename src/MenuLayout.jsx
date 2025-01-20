@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Paneer from './components/Pages/Paneer/Paneer';
 import Pasta from './components/Pages/Pasta/Pasta';
 import Category from './components/categories/Category';
@@ -16,42 +16,52 @@ import Cakes from './components/Pages/cakes/Cakes';
 import Naan from './components/Pages/Naan';
 import Fruit from './components/Pages/Fruit';
 import Juice from './components/Pages/Juice';
-// import { HashLoader } from 'react-spinners';
+import { useCart } from './ContextApi';
+
+const MenuLayout = () => { // Accept footerVisible as a prop
+
+  const [searchQuery, setSearchQuery] = useState('');
+  const { isFooterVisible, isMenuVisible, handleMenuClick } = useCart(); // Access menu visibility and handler from context
 
 
-const MenuLayout = () => {
-
-  // const [Loading, SetLoading] = useState(true);
-
-  // useEffect(()=>{
-  //     setTimeout(() => {
-  //     SetLoading(false)
-  //   }, 500);
-  // })
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
 
   return (
     <>
-            {/* {Loading ? <HashLoader color="#d32e2e" style={{position: 'absolute', top: '50%', left: '50%'}}/> : (
-<> */}
-    <Category/>
-   <Paneer/>
-   <Sandwich/>
-   <Pizza/>
-   <Pasta/>
-   {/* <Fruit/> */}
-   <Juice/>
-   <Shake/>
-   <Cakes/>
-   <GarlicBread/>
-   <Chinese/>
-   <Wrap/>
-   <Snacks/>
-   <Momos/>
-   <Chaap/>
-   <Dinner/>
-   <Naan/>
-   {/* </>
-            )} */}
+      {isMenuVisible && <Category />}
+      <Paneer />
+      <Sandwich />
+      <Pizza />
+      <Pasta />
+      <Juice />
+      <Shake />
+      <Cakes />
+      <GarlicBread />
+      <Chinese />
+      <Wrap />
+      <Snacks />
+      <Momos />
+      <Chaap />
+      <Dinner />
+      <Naan />
+      
+      <div
+        className="menu-btn-container"
+        style={{
+          bottom: isFooterVisible ? "2.4rem" : "0", // Adjust position based on footer visibility
+        }}
+      >
+        <input
+          type="text"
+          className="menu-search"
+          placeholder="Search..."
+          value={searchQuery}
+          onChange={handleSearchChange}
+        />
+        <h1 className="menu-btn" onClick={handleMenuClick}>Menu</h1>
+      </div>
     </>
   );
 };

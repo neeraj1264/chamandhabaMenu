@@ -11,6 +11,8 @@ export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
   const [selectedAddress, setSelectedAddress] = useState(null);
   const [showButtons, setShowButtons] = useState(false);
+  const [isFooterVisible, setFooterVisible] = useState(false); // New state for footer visibility
+  const [isMenuVisible, setMenuVisible] = useState(false); // State for menu visibility
 
 //   useEffect(() => {
 //     const storedCartItems = JSON.parse(localStorage.getItem("cartItems") || "[]");
@@ -31,6 +33,10 @@ const updateLocalStorage = (updatedCartItems) => {
     localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
     localStorage.setItem("cartItemsCount", updatedCartItems.length);
   }
+};
+
+const toggleFooterVisibility = (isVisible) => {
+  setFooterVisible(isVisible); // Function to update footer visibility
 };
 
   const incrementCart = () => {
@@ -68,6 +74,10 @@ updateLocalStorage();
     updateLocalStorage();
   };
 
+  const handleMenuClick = () => {
+    setMenuVisible((prev) => !prev); // Toggle menu visibility
+  };
+
   const value = {
     updateCartItemQuantity,
     cartItemsCount,
@@ -80,7 +90,11 @@ updateLocalStorage();
     setSelectedAddress,
     showButtons,
     setShowButtons,
-    removeCartItem
+    removeCartItem,
+    isFooterVisible, 
+    toggleFooterVisibility,
+    isMenuVisible, 
+    handleMenuClick,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

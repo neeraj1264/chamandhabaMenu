@@ -162,7 +162,7 @@ const CakeCard = ({ id, name, description, price, image, mrp, size }) => {
               <span
                 style={{
                   marginLeft: ".5rem",
-                  color: "var(--bg)",
+                  color: "var(--dark-green)",
                 }}
               >
                 {(((mrp - price) / mrp) * 100).toFixed(0)}% off
@@ -190,10 +190,11 @@ const CakeCard = ({ id, name, description, price, image, mrp, size }) => {
               <button
                 variant="contained"
                 style={{
-                  color: "whitesmoke",
+                  background: "var(--dark-green)",
                   border: "none",
-                  background: "#d32e2e",
+                  color: "var(--light-green)",
                   borderRadius: ".5rem",
+                  boxShadow: "var(--light-green) 1px 0px 3px 3px",
                 }}
                 onClick={handleRemoveToCart}
               >

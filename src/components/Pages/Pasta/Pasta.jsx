@@ -8,6 +8,7 @@ const pastaData = [
   { id: 24, name: 'Makhani Pasta',     image: '/img/pasta/makhnipasta.jpg', description: 'Indulge in the rich and velvety experience of our Makhani Sauce Pasta', price: 130, mrp: '165' },
   { id: 25, name: 'Mix Sauce Pasta',   image: '/img/pasta/mixpasta.jpg', description: 'Introducing our Mix Sauce Pasta, a delightful fusion that brings together the best of both red and white sauces.', price: 140, mrp: '180' },
 ];
+
 const renderCards = (data) => {
   return data.map((item) => <Cards key={item.id} {...item} />);
 };
@@ -15,7 +16,7 @@ const Pasta = () => {
   
   return (
     <>
-       <h2 id='pasta' style={{textAlign: 'center' , marginTop: '8rem'}}>Delicious Pasta</h2>
+       <h2 id='pasta' className='category-header'>Delicious Pasta</h2>
        {renderCards(pastaData)}
     </>
   );

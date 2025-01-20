@@ -27,7 +27,7 @@ const Dinner = () => {
   
   return (
     <>
-      <h2 id='dinner' style={{textAlign: 'center' , marginTop: '8rem'}}>Delicious Dinner</h2>
+      <h2 id='dinner' className='category-header'>Delicious Dinner</h2>
       {renderCards(DinnerData)}
     </>
   );

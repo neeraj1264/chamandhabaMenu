@@ -1,22 +1,33 @@
-import Header from './components/header/Header';
+import React, { useState, useCallback } from "react";
 import { Outlet } from 'react-router';
 import Footer from './components/footer/Footer';
 import { CartProvider } from './ContextApi';
-function Layout() {
+import MenuLayout from "./MenuLayout";
 
-    return (
-     <>
-         <CartProvider>
-      <div className="app-container">
-        {/* <Header /> */}
-        <div className="main-content">
-          <Outlet />
+function Layout() {
+  const [footerVisible, setFooterVisible] = useState(false);
+
+  const handleFooterVisibilityChange = useCallback((isVisible) => {
+    setFooterVisible(isVisible);
+  }, []);
+
+  return (
+    <>
+      <CartProvider>
+        <div className="app-container">
+          <div
+            className="main-content"
+            style={{
+              marginBottom: footerVisible ? "4rem" : "0",
+            }}
+          >
+            <MenuLayout footerVisible={footerVisible} /> {/* Pass footerVisible as prop */}
+          </div>
+          <Footer onFooterVisibilityChange={handleFooterVisibilityChange} />
         </div>
-        <Footer />
-      </div>
-    </CartProvider>
-     </>
-    )
-  }
-  
-  export default Layout
+      </CartProvider>
+    </>
+  );
+}
+
+export default Layout;

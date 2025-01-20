@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Category.css";
 import { Link, useLocation } from "react-router-dom";
+import { useCart } from "../../ContextApi";
 
 const categories = [
   // { id: 15, name: "fruits", image: "/img/fruit/fruit.jpeg" },
@@ -23,6 +24,7 @@ const categories = [
 
 function Category() {
   const location = useLocation();
+  const { handleMenuClick } = useCart(); // Access menu visibility and handler from context
 
   useEffect(() => {
     const hash = location.hash.substring(1);
@@ -51,16 +53,15 @@ function Category() {
         <Link
           to={`#${encodeURIComponent(category.name)}`}
           key={category.id}
-          onClick={() => scrollToSection(category.name)}
+          onClick={() => {
+            handleMenuClick(); // Call the first function
+            scrollToSection(category.name); // Call the second function
+          }}
         >
           <div className="card">
-            <img
-              src={category.image}
-              className="card-img-top"
-              alt={category.name}
-            />
             <div className="card-body">
               <p className="card-text">{category.name}</p>
+              <span className="item-count">{category.name.length}</span>
             </div>
           </div>
         </Link>

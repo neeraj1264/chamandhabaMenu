@@ -2,51 +2,64 @@
   flex: 1 1 auto;
   text-align: center;
   font-weight: 800;
-  padding: 0.5rem;
+  padding: 1rem;
   font-size: 1rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  background-color: #121212;
+}
+
+.card {
+  width: auto;
+  border: none !important;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  background-color: #121212;
+  margin: 0;
+  color: white;
+}
+.item-count{
+background-color: #121212;
+color: white;
+}
+.leftarrow {
+  z-index: 1001;
+  font-size: 1.3rem;
+  position: fixed;
+  top: 0;
   color: var(--bg);
-  }
-  
-  .card {
-    width: auto;
-    margin: 1rem 0.5rem 0;
-    border: none;
-  }
-  .card img{
-    width: 50px;
-    height: 50px;
-    /* object-fit: cover; */
-    margin: 0 auto;
-    border: 0px solid blue;
-    border-radius: 50%;
-    background: black;
- }
-  
- .card-text{
-  font-size: .9rem;
- }
+}
 
-  .outer-card {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #fff; /* Add your desired background color */
-    z-index: 1000; /* Set a high z-index to ensure it's above other content */
-    display: flex;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for styling */
-    flex-wrap: nowrap;
-    overflow-x: auto; 
-    scrollbar-width: thin;
-    scrollbar-color: transparent transparent;  
-    border-radius: 0 0 1rem 1rem;
-    box-shadow: 1px 0px 3px 3px var(--bg);
-  }
+.outer-card {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  height: 70%;
+  width: 70%;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
 
-  .leftarrow{
-    z-index: 1001;
-    font-size: 1.3rem;
-    position: fixed;
-    top: 0;
-    color: var(--bg);
-  }
+/* Optional: Styling for scrollbar in modern browsers */
+.outer-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+.outer-card::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Thumb color */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.outer-card::-webkit-scrollbar-track {
+  background-color: transparent; /* Track color */
+}

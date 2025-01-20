@@ -23,7 +23,7 @@ const Naan = () => {
   
   return (
     <>
-      <h2 id='naan' style={{textAlign: 'center' , marginTop: '8rem'}}>Hot Naan</h2>
+      <h2 id='naan' className='category-header'>Hot Naan</h2>
       {renderCards(Data)}
     </>
   );
